@@ -31,7 +31,6 @@
 
         {{-- Right side actions --}}
         <x-slot:actions>
-            <x-mary-button label="Messages" icon="o-envelope" link="###" class="btn-ghost btn-sm" />
             <x-mary-button label="Notifications" icon="o-bell" link="###" class="btn-ghost btn-sm" />
         </x-slot:actions>
     </x-mary-nav>
@@ -44,17 +43,35 @@
         <x-slot:sidebar drawer="main-drawer" class="bg-neutral-100">
             {{-- Activates the menu item when a route matches the `link` property --}}
             <x-mary-menu activate-by-route>
-                <x-mary-menu-item title="Home" icon="o-home" link="###" />
-                <x-mary-menu-item title="Messages" icon="o-envelope" link="###" />
+                <x-mary-menu-item title="Home" icon="o-home" link="/dashboard" />
                 <x-mary-menu-separator />
                 {{-- Submenu --}}
-                <x-mary-menu-sub title="Settings" icon="o-cog-6-tooth">
-                    <x-mary-menu-item title="Wifi" icon="o-wifi" />
-                    <x-mary-menu-item title="Archives" icon="o-archive-box" />
+                <x-mary-menu-sub title="Master" icon="o-cog-6-tooth">
+                    <x-mary-menu-item title="User" icon="o-user" />
+                    <x-mary-menu-item title="Role" icon="o-user-circle" />
+                    <x-mary-menu-item title="Permission" icon="c-user-circle" />
+                    <x-mary-menu-item title="Customer" icon="o-user-group" link="/customer" />
+                    <x-mary-menu-item title="Supplier" icon="o-users" />
+                    <x-mary-menu-item title="Armada" icon="o-truck" />
+                    <x-mary-menu-item title="Biaya" icon="o-banknotes" />
                 </x-mary-menu-sub>
-                {{-- Separator with title and icon --}}
-                <x-mary-menu-separator title="Magic" icon="o-sparkles" />
-                <x-mary-menu-item title="Wifi" icon="o-wifi" />
+
+                <x-mary-menu-sub title="Manajemen" icon="o-cog-6-tooth">
+                    <x-mary-menu-item title="Project" icon="o-user" />
+                    <x-mary-menu-item title="Invoice" icon="o-user-circle" />
+                    <x-mary-menu-item title="Order" icon="c-user-circle" />
+                    <x-mary-menu-item title="> Order Detail" icon="c-user-circle" />
+                    <x-mary-menu-item title="> PiC Surat Jalan" icon="o-banknotes" />
+                    <x-mary-menu-item title="Ka Lap Project" icon="o-user" />
+                    <x-mary-menu-item title="> Pengajuan Keuangan" icon="o-user" />
+                </x-mary-menu-sub>
+
+                <x-mary-menu-separator title="Transaksi" icon="o-sparkles" />
+                    <x-mary-menu-item title="Surat Jalan" icon="far.pen-to-square" />
+                    <x-mary-menu-item title="Absensi" icon="far.address-book" />
+                    <x-mary-menu-item title="Timesheet" icon="c-user-circle" />
+                    <x-mary-menu-item title="Kas Kecil" icon="c-user-circle" />
+
                 {{-- Separator with title and icon --}}
                 <x-mary-menu-separator />
                 <x-mary-menu-item title="Profile" icon="o-wifi" />
