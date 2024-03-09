@@ -23,7 +23,7 @@ class extends Component {
     }
 
     public function edit($id){
-        dd('Customer ID : ' . $id);
+        $showCustomerModal = true;
     }
 
     public function delete($id){
@@ -39,8 +39,7 @@ class extends Component {
         $headers = [
         ['key' => 'id', 'label' => '#', 'class' => 'bg-red-100 w-1'],
         ['key' => 'name', 'label' => 'Customer Name'],
-        ['key' => 'description', 'label' => 'Description', 'class' => 'hidden lg:table-cell'],
-        ['key' => 'action', 'label' => 'Action']];
+        ['key' => 'description', 'label' => 'Description', 'class' => 'hidden lg:table-cell']];
     @endphp
 
     <x-mary-header title="Customer" subtitle="Manajemen Data">
@@ -48,7 +47,7 @@ class extends Component {
             <x-mary-input icon="o-magnifying-glass" placeholder="Search..." />
         </x-slot:middle>
         <x-slot:actions>
-            <x-mary-button icon="o-plus" @click="$wire.showCustomerModal = true" class="btn-primary" />
+            <x-mary-button icon="o-plus" class="btn-primary" @click="$wire.showCustomerModal = true"/>
         </x-slot:actions>
     </x-mary-header>
 
@@ -67,7 +66,7 @@ class extends Component {
 
         @scope('actions', $customer)
         <div class="flex justify-center">
-            <x-mary-button icon="o-pencil" wire:click="edit({{ $customer->id }})" spinner class="btn-sm mx-3"/>
+            <x-mary-button icon="o-pencil" spinner class="btn-sm mx-3" @click="$wire.showCustomerModal = true" />
             <x-mary-button icon="o-trash" wire:click="delete({{ $customer->id }})" spinner class="btn-sm" />
         </div>
         @endscope
@@ -89,6 +88,8 @@ class extends Component {
             </x-slot:actions>
         </div>
     </x-mary-modal>
+
+
 </div>
 
 
