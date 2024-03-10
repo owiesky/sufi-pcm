@@ -18,7 +18,10 @@ class SupplierFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'description' => fake()->sentence(),
+            'description' => fake()->text(),
         ];
     }
+
+    //php artisan tinker
+    //Supplier::factory()->count(37)->create()
 }

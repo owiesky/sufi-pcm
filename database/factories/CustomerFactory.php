@@ -21,4 +21,6 @@ class CustomerFactory extends Factory
             'description' => fake()->sentence(),
         ];
     }
+    //php artisan tinker
+    //Supplier::factory()->count(37)->create()
 }
