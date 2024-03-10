@@ -1,7 +1,7 @@
 <?php
 
 use App\Livewire\Actions\Logout;
-use App\Livewire\Master\SupplierList;
+use App\Livewire\Master\SupplierIndex;
 use Illuminate\Auth\Events\CurrentDeviceLogout;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -31,7 +31,7 @@ Volt::route('/customer', 'customer.index')
     ->middleware(['auth'])
     ->name('customer-index');
 
-Route::get('/supplier', SupplierList::class)
+Route::get('/supplier', SupplierIndex::class)
     ->name('supplier-index');
 
 Route::get('/logout', [Logout::class, 'doLogout']);
