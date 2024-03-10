@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="cupcake">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="valentine">
 
 <head>
     <meta charset="utf-8">
@@ -16,17 +16,23 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-gray-900 antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-        <div>
-            <a href="/" wire:navigate>
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </div>
+<body class="font-sans antialiased">
+    <div class="min-h-screen">
+        <livewire:layout.navigation />
 
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 shadow-md overflow-hidden sm:rounded-lg">
+        <!-- Page Heading -->
+        @if (isset($header))
+            <header>
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+        @endif
+
+        <!-- Page Content -->
+        <main>
             {{ $slot }}
-        </div>
+        </main>
     </div>
 </body>
 

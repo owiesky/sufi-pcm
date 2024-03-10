@@ -1,0 +1,16 @@
+$user = User::find(1);
+
+if ($user->hasRole('admin')) {
+// do something
+}
+
+if ($user->can('view users')) {
+// do something
+}
+
+Route::middleware('role:admin')->get('/users', function () {
+// ...
+});
+
+php artisan make:livewire Master/user-index
+php artisan livewire:form UserForm

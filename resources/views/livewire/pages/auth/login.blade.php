@@ -74,6 +74,9 @@ new #[Layout('layouts.guest')] class extends Component {
                     </div>
                 </form>
             </div>
+            <div class="grid place-items-center mb-3">
+               <x-mary-button label="Daftar" class="btn-warning" link="/register" />
+            </div>
         </div>
     </div>
 </div>
